@@ -2,7 +2,7 @@
 #include "libMenu.h"
 
 int main() {
-    load_contact();
+    carregar_arquivo();
     menu();
     return 0;
 }
