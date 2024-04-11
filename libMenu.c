@@ -57,6 +57,15 @@ void deletar_contato(int s){
     fclose(file);
 }
 
+void editar_contato(){
+    remove(FILE_NAME);
+    FILE *file = fopen(FILE_NAME, "a+");
+    for (int i = 0; i < counter; ++i) {
+        salvar_contato(contacts[i], file);
+    }
+    fclose(file);
+}
+
 void menu(){
 
     // Operador do switch
@@ -153,15 +162,6 @@ void menu_edicao_exclusao(){
     }
     else
             printf("Contato inexistente\n");
-}
-
-void editar_contato(){
-    remove(FILE_NAME);
-    FILE *file = fopen(FILE_NAME, "a+");
-    for (int i = 0; i < counter; ++i) {
-        salvar_contato(contacts[i], file);
-    }
-    fclose(file);
 }
 
 void mostrar_contatos(int i){
